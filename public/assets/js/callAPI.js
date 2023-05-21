@@ -198,6 +198,7 @@ class writingClass{
         let paragraph = document.createElement("p");
         paragraph.textContent = response;
         paragraph.textContent = response.choices[0].message.content;
+        writingClass.#components.aiWriting.appendChild(paragraph);
     }
 
     constructor(command, json) {
