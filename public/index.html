@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>LingBuddy</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/style/all.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/style/bulma.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/style/main.css'>
+</head>
+<body>
+    
+    <div style="display: none" id="pageTitle">dashboard</div>
+
+    <div class="columns">
+        <div class="column linksMenu active"></div>
+
+        <div class="column contenter contentBox nopadd">
+            <nav class="navigation">
+                <span class="active" dashpage="overview">Overview</span>
+                <!-- <span dashpage="notification">Notification</span> -->
+                <span dashpage="subscription">Subscriptions</span>
+                <span dashpage="flags">Flags</span>
+                <span dashpage="misspelling">Misspelling</span>
+            </nav>
+
+            <div class="theContent">
+                <section dashPage="overview">
+                    <h2 class="label is-3 has-text-weight-medium is-marginless">Account Overview</h2>
+                    <div class="columns is-multiline">
+                        <div class="column is-6">
+                            <div class="subscription">
+                                <div class="is-flex is-align-items-center is-justify-content-space-between">
+                                    <span class="label has-text-weight-normal is-marginless">Subscription:</span>
+                                    <span class="label has-text-weight-normal is-size-7">Get ready for IELTS Test</span>
+                                </div>
+                                <div class="is-flex is-align-items-center is-justify-content-space-between">
+                                    <span class="is-size-4">20<sub class="is-size-5">/ 30</sub></span>
+                                    <span class="is-size-4">Days Left</span>
+                                </div>
+                                <div class="is-flex is-align-items-center">
+                                    <progress class="progress is-small is-subsc" value="20" max="30"></progress>
+                                    <span>66%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="levels">
+                                <span class="is-size-6 is-marginless">To Next Level</span>
+                                <div class="is-flex is-align-items-center is-justify-content-space-between">
+                                    <span class="is-size-4">1243<sub class="is-size-5">/ 1500</sub></span>
+                                    <div class="levelNum">
+                                        <p>B+</p>
+                                    </div>
+                                </div>
+                                <div class="is-flex is-align-items-center">
+                                    <progress class="progress is-small is-level" value="1243" max="1500"></progress>
+                                    <span>72%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section dashPage="misspelling">
+                    <h2 class="label is-3 has-text-weight-medium is-marginless">Misspelling</h2>
+                        <table>
+                            <tr>
+                              <th>Word</th>
+                              <th>Mistakes </th>
+                            </tr>
+                            <tr>
+                              <td>hello</td>
+                              <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>better</td>
+                                <td>20</td>
+                              </tr>
+                            <tr>
+                              <td>Paper</td>
+                              <td>6</td>
+                            </tr>
+                        </table> 
+                </section>
+
+                <section dashPage="misspelling">
+                    <h2 class="label is-3 has-text-weight-medium is-marginless">Grammer</h2>
+                        <table>
+                            <tr>
+                              <th>Grammer</th>
+                              <th>Flag </th>
+                            </tr>
+                            <tr>
+                              <td>Present Perfect</td>
+                              <td class="has-text-danger">10</td>
+                            </tr>
+                            <tr>
+                                <td>Present Simple</td>
+                                <td class="has-text-warning">5</td>
+                            </tr>
+                            <tr>
+                              <td>Past Simple</td>
+                              <td class="has-text-primary">2</td>
+                            </tr>
+                        </table> 
+                </section>
+
+                <!-- <section dashPage="subscription">
+                    <h2 class="label is-3 has-text-weight-medium">Subscription Table</h2>
+                    <div class="pricing-cards columns is-multiline">
+                        <div class="column is-4">
+                            <div class="pricing-card ">
+                                <div class="card-type is-size-6">IELTS</div>
+                                <h1 class="card-price">15.99$</h1>
+                                <h3 class="month">/ Month</h3>
+                                <ul class="lista">
+                                    <li class="list-item is-flex is-justify-content-start">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span>Lorem ipsum dolor sit.</span>
+                                    </li>
+                                    <li class="list-item is-flex is-justify-content-start">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        <span>Lorem ipsum dolor sit.</span>
+                                    </li>
+                                </ul>
+                                <button type="button" class="card-btn">Subscripe</button>
+                                <div class="card-bottom">Current</div>
+                            </div>
+                        </div>
+        
+                        <div class="column is-4">
+                            <div class="pricing-card ">
+                                <div class="card-type is-size-6">Easy IELTS</div>
+                                <h1 class="card-price">35.99$</h1>
+                                <h3 class="month">/ Month</h3>
+                                <ul class="lista">
+                                    <li class="list-item is-flex is-justify-content-start">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span>Lorem ipsum dolor sit.</span>
+                                    </li>
+                                    <li class="list-item is-flex is-justify-content-start">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        <span>Lorem ipsum dolor sit.</span>
+                                    </li>
+                                </ul>
+                                <button type="button" class="card-btn">Subscripe</button>
+                                <div class="card-bottom">Current</div>
+                            </div>
+                        </div>
+        
+                        <div class="column is-4">
+                            <div class="pricing-card ">
+                                <div class="card-type is-size-6">Full</div>
+                                <h1 class="card-price">40.99$</h1>
+                                <h3 class="month">/ Month</h3>
+                                <ul class="lista">
+                                    <li class="list-item is-flex is-justify-content-start">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span>Lorem ipsum dolor sit.</span>
+                                    </li>
+                                    <li class="list-item is-flex is-justify-content-start">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        <span>Lorem ipsum dolor sit.</span>
+                                    </li>
+                                </ul>
+                                <button type="button" class="card-btn">Subscripe</button>
+                                <div class="card-bottom">Current</div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </section> -->
+                
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <nav class="mobileHeader is-flex is-justify-content-space-evenly"></nav>
+
+</body>
+</html>
+<script src='/assets/js/main.js'></script>
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+  
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  
