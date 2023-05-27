@@ -1,3 +1,82 @@
+.button.is-purpleGrade {
+  background-image: var(--gradientPurpleLD2);
+  border: none;;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-purpleGrade:hover, .button.is-purpleGrade.is-hovered {
+  background-image: var(--gradientPurpleLD1);
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-purpleGrade:focus, .button.is-purpleGrade.is-focused {
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-purpleGrade:focus:not(:active), .button.is-purpleGrade.is-focused:not(:active) {
+  box-shadow: 0 0 0 0.125em hsla(255, 65%, 59%, 0.718);
+}
+
+.button.is-purpleGrade:active, .button.is-purpleGrade.is-active {
+  background-image: var(--gradientPurpleLD1);
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-purpleGradedeg {
+  background-image: var(--gradientPurpleLD4);
+  border: none;;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-purpleGradedeg:hover, .button.is-purpleGradedeg.is-hovered {
+  background-image: var(--gradientPurpleLD4);
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-purpleGradedeg:focus, .button.is-purpleGradedeg.is-focused {
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-purpleGradedeg:focus:not(:active), .button.is-purpleGradedeg.is-focused:not(:active) {
+  box-shadow: 0 0 0 0.125em hsla(255, 65%, 59%, 0.718);
+}
+
+.button.is-purpleGradedeg:active, .button.is-purpleGradedeg.is-active {
+  background-image: var(--gradientPurpleLD4);
+  border-color: transparent;
+  color: #fff;
+}
+
+
+
+.tag:not(body).is-purpleGradedeg {
+  background-image: var(--gradientPurpleLD3);
+  color: #fff;
+}
+.tag.is-purpleGradedeg.is-light {
+  background-image: none;
+  background-color: #d8cdff !important;
+  color: var(--purple40) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*! bulma.io v0.9.3 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
 .button, .input, .textarea, .select select, .file-cta,
@@ -11813,3 +11892,4 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
 }
 /*# sourceMappingURL=bulma.css.map */
+

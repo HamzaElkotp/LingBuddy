@@ -19,8 +19,11 @@ function generateNav(allpages){
 
     const burger = document.createElement('i');
     burger.classList.add("fa-solid", "fa-bars", "burger");
+    // burger.classList.add("fa-solid", "fa-minus", "burger");
     burger.addEventListener('click',()=>{
         linksMenu.classList.toggle('active');
+        linksMenu.querySelector("i").classList.toggle('fa-minus');
+        linksMenu.querySelector("i").classList.toggle('fa-bars');
     })
 
     const liks = document.createElement('div');
@@ -164,6 +167,44 @@ function hideReportDataPopup(){
     }, 1800);   
 }
 // Function to show details of every reportSection
+
+
+
+
+
+
+let dashpage = [...document.querySelectorAll('[dashpage]')];
+let dashSect = [...document.querySelectorAll('[dashSect]')]
+dashpage.forEach((ele)=>{
+    ele.addEventListener('click',()=>{
+        dashSect.forEach((sect)=>{
+            sect.classList.remove("active");
+        })
+        dashpage.forEach((child)=>{
+            child.classList.remove("active")
+        })
+        ele.classList.add('active')
+        let val = ele.getAttribute('dashpage');
+        console.log(val)
+        document.querySelector(`[dashSect=${val}]`).classList.add("active");
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
