@@ -81,12 +81,14 @@
     --gradientPurpleLD2: linear-gradient(to right, #593ebb, #9741fa);
     --gradientPurpleLD3: linear-gradient(to right, #583dbb, #9540f6);
     --gradientPurpleLD4: linear-gradient(to bottom, #583dbb, #9540f6);
+    --purple01: #d7d0d9;
     --purple10: #fd78d2;
     --purple20: #a154f9;
     --purple30: #9d65ea;
     --purple40: #684bd4;
     --purple50: #ba75f9; 
     --purple60: #7453db; 
+    --purple65: #82409d;
     --purple70: #6c5c7a; 
     --purple75: #2a2b2f;
     --purple80: #42354c;
@@ -499,15 +501,15 @@ nav.mobileHeader .navbar-item.active i {
 
 .backnav {
     height: 40px;
-    border-bottom: 2px solid var(--greenL);
-    background-color: var(--bLightbg);
+    border-bottom: 2px solid var(--purple20);
+    background-color: var(--darkPurpel);
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
 }
 .backto{
     font-size: 15px;
-    color: var(--gLightbg);
+    color: var(--purple20);
 }
 .txtContentBox{
     padding-bottom: 20px;
@@ -530,7 +532,7 @@ nav.mobileHeader .navbar-item.active i {
     border-radius: 8px;
 }
 .aiTxtBox{
-    background-color: var(--greenLL);
+    background-color: var(--purple01);
 }
 .chat {
     padding: 15px;
@@ -664,19 +666,22 @@ nav.mobileHeader .navbar-item.active i {
 
 
 
-
+.studyOptions{
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .optioner {
-    background-color: var(--gray40);
+    background-color: var(--purple01);
     padding: 20px;
     cursor: pointer;
     border-radius: 5px;
-    border: 2px solid var(--greenL);
+    border: 2px solid var(--purpel);
 }
 .optioner *{
     transition: 0.5s;
 }
 .optioner:hover *{
-    color: var(--gLightbg);
+    color: var(--purple65);
 }
 
 .fa-solid.fa-paper-plane-top {
@@ -692,12 +697,10 @@ nav.mobileHeader .navbar-item.active i {
     margin: 40px auto;
     font-size: 35px;
     cursor: pointer;
-    background-color: var(--gLightbg);
     color: var(--bLightbg);
     transition: 0.5s;
 }
 .record:hover {
-    background-color: var(--greenL);
     color: var(--whiteBg);
 }
 .stop{
@@ -1038,7 +1041,7 @@ nav.mobileHeader .navbar-item.active i {
     width: 80%;
     min-width: 280px; 
     /* background-color: #fafafa; */
-    padding: 20px;
+    padding: 20px 20px 30px;
     height: calc(100vh - 40px);
     border-radius: 5px 5px 0 0;
     overflow-y: auto;
@@ -1046,7 +1049,6 @@ nav.mobileHeader .navbar-item.active i {
     bottom: -100vh;
 
 
-    /* From https://css.glass */
     background: rgba(255, 255, 255, 0.75);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(6px);
@@ -1069,7 +1071,8 @@ nav.mobileHeader .navbar-item.active i {
     font-size: 1.05rem !important;
 }
 .important {
-    color: #00937d;
+    /* color: #00937d; */
+    color: var(--purple40);
 }
 .dataPop .buttons{
     position: absolute;
@@ -1712,21 +1715,21 @@ hr {
         width: 100%;
     }
 } */
-/*@media screen and (max-width: 851px), print{
+@media screen and (max-width: 851px), print{
     .lessonsPage .column.is-4, .lessonsPage .column.is-4-tablet {
         flex: none;
         width: 100%;
         min-width: 320px;
     }
     .column.contenter.contentBox {
-        margin-right: 12px !important;
-        padding: 10px 10px 70px !important;
+        /* margin-right: 12px !important; */
+        padding: 10px 10px 100px !important;
         overflow-x: hidden;
     }
     .columns.is-multiple.lessonsPage {
         overflow: hidden;
     }
-} */
+}
 
 @media (max-width: 375px) {
     .lessonsPage .column{

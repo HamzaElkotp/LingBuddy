@@ -262,7 +262,7 @@ class storyWritingClass{
         title.classList.add('is-size-6');
         title.textContent = topic;
         let span = document.createElement("span");
-        span.classList.add('is-size-6', "has-text-success", "has-text-weight-medium");
+        span.classList.add('is-size-6', "has-text-purple", "has-text-weight-medium");
         span.textContent = "Write About: ";
         title.prepend(span);
         storyWritingClass.#interfaces.chat.prepend(title);

@@ -12,7 +12,7 @@
 <body>
     
     <nav class="backnav is-flex is-justify-content-space-between is-align-items-center">
-        <a href="../" class="backto"><i class="fa-duotone fa-arrow-left"></i> Back</a>
+        <a href="../" class="backto"><i class="fa-solid fa-caret-left"></i> Back</a>
         <p class="subtitle is-5 has-text-weight-mediume has-text-grey-lighter">IELTS Speaking Part 1 Exercise</p>
     </nav>
 
@@ -22,7 +22,7 @@
             <ul class="list">
                 <li>Set in a <span class="has-text-primary-dark">quiet</span> place.</li>
                 <li>Allow <span class="has-text-primary-dark">access</span> to your microphone.</li>
-                <li>You will recieve <span class="has-text-info">5</span> Questions, <span class="has-text-info">one after one</span>.</li>
+                <li>You will recieve <span class="has-text-purple">5</span> Questions, <span class="has-text-purple">one after one</span>.</li>
                 <li>You have at <span class="has-text-danger">maximum</span> one minute to answer each question.</li>
                 <li>You will hear each question then you can <span class="has-text-primary-dark">record</span> your answer.</li>
                 <li>You can move to the next question after <span class="has-text-success-dark">submiting</span> the previous one.</li>
@@ -32,21 +32,21 @@
             <br>
             <p class="is-size-6">Click the Button to generate a topic</p>
             <div class="buttons has-text-centered is-centered">
-                <button class="button is-primary" id="generateSpeak1">Generate Exercise</button>
+                <button class="button is-purpleGrade" id="generateSpeak1">Generate Exercise</button>
             </div>
         </div>
 
         <div class="questions trans" id="questions">
-            <p class="is-size-5" id="question"><span class="has-text-primary-dark">Q1:</span> <span></span> </p>
+            <p class="is-size-5" id="question"><span class="has-text-purple">Q1:</span> <span></span> </p>
             <div class="recordContainer">
                 <div id="timer" class="is-size-2 has-text-centered">01:00</div>
-                <button id="recordBtn" class="record"><i class="fa-solid fa-microphone"></i></button>
-                <button id="stopBtn" class="record stop hide"><i class="fa-solid fa-stop"></i></button>
+                <button id="recordBtn" class="record button is-purpleGrade"><i class="fa-solid fa-microphone"></i></button>
+                <button id="stopBtn" class="record button is-purpleGrade stop hide"><i class="fa-solid fa-stop"></i></button>
                 <div id="afterRecord" class="has-text-centered afterRecord trans">
                     <audio src="" controls></audio>
                     <div class="buttons is-centered">
-                        <button id="newRecord" class="button is-danger is-rounded is-small"><i class="fa-duotone fa-rotate-right" style="padding-right: 5px;"></i> Re-record</button>
-                        <button id="submit" class="button is-primary is-rounded is-small">Submit <i class="fa-solid fa-caret-right" style="padding-left: 5px;"></i></button>
+                        <button id="newRecord" class="button is-danger is-rounded is-small"><i class="fa-solid fa-arrow-rotate-right" style="padding-right: 5px;"></i> Re-record</button>
+                        <button id="submit" class="button is-purpleGrade is-rounded is-small">Submit <i class="fa-solid fa-caret-right" style="padding-left: 5px;"></i></button>
                     </div>
                 </div>
             </div>
