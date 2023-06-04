@@ -202,7 +202,13 @@ toolControl?.addEventListener('click', ()=>{
 
 
 
-
+let exportDataTable = document.getElementById("exportDataTable");
+exportDataTable?.addEventListener('click', ()=>{
+    let doc = new jsPDF();
+    const fileName = document.querySelector(".backnav").querySelector("p").textContent;
+    doc.autoTable({ html: 'table' });
+    doc.save(`${fileName}.pdf`);
+})
 
 
 

@@ -1027,12 +1027,12 @@ nav.mobileHeader .navbar-item.active i {
     justify-content: center;
     align-items: end;
     background-color: rgba(0, 0, 0, 0.15);
-    transition: 0.8s 1.3s opacity;
+    transition: 0.5s 0.8s opacity;
     opacity: 0;
     display: none;
 }
 .popup-overlay.active {
-    transition: 0.5s opacity;
+    transition: 0.2s opacity;
     opacity: 1;
 }
 .popup-container {
@@ -1044,7 +1044,7 @@ nav.mobileHeader .navbar-item.active i {
     height: calc(100vh - 40px);
     border-radius: 5px 5px 0 0;
     overflow-y: auto;
-    transition: 2s bottom;
+    transition: 1s bottom;
     bottom: -100vh;
 
     background: rgba(255, 255, 255, 0.75);
@@ -1070,7 +1070,7 @@ nav.mobileHeader .navbar-item.active i {
     margin-top: 0px !important;
 }
 .popup-overlay.active .popup-container {
-    transition: 1s 0.2s bottom;
+    transition: 0.5s 0.2s bottom;
     bottom: 0;
     border-radius: 5px;
 }
