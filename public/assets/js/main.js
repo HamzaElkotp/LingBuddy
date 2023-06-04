@@ -191,6 +191,14 @@ dashpage.forEach((ele)=>{
 })
 
 
+const toolControl = document.querySelector("#toolControl");
+const toolsControlPopup = document.querySelector("#toolsControlPopup");
+toolControl?.addEventListener('click', ()=>{
+    toolsControlPopup.style.display = "flex";
+    setTimeout(() => {
+        toolsControlPopup.classList.add('active');
+    }, 10);  
+})
 
 
 
@@ -205,8 +213,6 @@ dashpage.forEach((ele)=>{
 
 
 
-
-
-
+// showReportDataPopup() 
 
 

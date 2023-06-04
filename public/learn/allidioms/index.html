@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>LingBuddy</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/style/all.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/style/bulma.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/style/main.css'>
+</head>
+
+<body>
+
+    <nav class="backnav is-flex is-justify-content-space-between is-align-items-center">
+        <a href="../" class="backto"><i class="fa-solid fa-caret-left"></i> Back</a>
+        <p class="subtitle is-5 has-text-weight-mediume has-text-grey-lighter">All Idioms</p>
+    </nav>
+
+    <div class="block contenter train">
+        <table>
+            <thead>
+                <tr>
+                    <td>Idioms</td>
+                    <td>Meaning</td>
+                    <td class="td-too-very-small">Control</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Actions speak louder than words</td>
+                    <td class="is-size-6-5">Believe what people do and not what they say</td>
+                    <td class="has-text-danger"><button class="bookmark"><i class="fa-regular fa-bookmark"></i></button></td>
+                </tr>
+
+                <tr>
+                    <td>A perfect storm</td>
+                    <td class="is-size-6-5">the worst possible situation</td>
+                    <td class="has-text-danger"><button class="bookmark"><i class="fa-regular fa-solid fa-bookmark"></i></button></td>
+                </tr>
+            </tbody>
+        </table> <br>
+        <button class="button is-purpleGrade" id="exportDailyWords">Export <i class="fa-regular fa-file-pdf"></i></button>
+    </div>
+
+</body>
+
+</html>
+<script src='/assets/js/main.js'></script>
+<script src='/assets/js/callAPI.js'></script>
+
+<!-- https://dictionaryapi.dev/ -->
