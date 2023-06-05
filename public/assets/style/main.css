@@ -976,10 +976,10 @@ nav.mobileHeader .navbar-item.active i {
   }
 
 
-.type-selector {
-    overflow-x: auto;
+.type-selector, .navigation {
+    overflow-x: auto !important;
     width: 100%;
-    overflow-y: clip;
+    overflow-y: clip !important;
     scrollbar-width: thin;
     display: block ruby;
 }
@@ -1111,10 +1111,9 @@ nav.mobileHeader .navbar-item.active i {
 
 .navigation {
     width: 100%;
-    padding: 5px 15px 0 15px;
+    padding: 12px 15px 0 15px;
     /* border-bottom: 1px solid var(--gLightbg); */
     border-bottom: 1px solid var(--purple50);
-    display: flex;
 }
 .navigation span{
     padding: 5px 8px 0px;
@@ -1712,7 +1711,7 @@ hr {
   z-index: 1;
 }
 .button.r .knobs:before {
-  content: "NO";
+  content: "OFF";
   position: absolute;
   top: 3px;
   left: 4px;
@@ -1726,7 +1725,7 @@ hr {
   padding: 9px 4px;
   background: var(--purple80);
   border-radius: 50%;
-  transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  transition: 0.25s ease all, left 0.25s cubic-bezier(0.18, 0.89, 0.35, 1.15);
 }
 .button.r .checkbox:active + .knobs:before {
   width: 46px;
@@ -1736,7 +1735,7 @@ hr {
   margin-left: -26px;
 }
 .button.r .checkbox:checked + .knobs:before {
-  content: "YES";
+  content: "ON";
   left: 39px;
   background: var(--gradientPurpleLD2);
 }

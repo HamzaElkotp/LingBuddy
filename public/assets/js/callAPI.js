@@ -104,6 +104,35 @@ const composer = function(...funcs) {
 
 
 
+// Function to call unsplash API
+let accessKey = "6k1u0Kl_rKhtpE1NLWy0m_MXp-PNaHfmBJz23w4RVE4";
+let width = 1080;
+let height = 720
+const getUnsplashImg = async function(fun){
+    async function fetchAPI(){
+        const response = await fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}&w=1080&h=720`);
+
+        if(!response.ok){ return false}
+        return await response.json();
+    }
+    fetchAPI()
+    .then((response)=>{
+        if(response != false){
+            fun(response)
+        }
+    })
+}
+// data
+
+
+
+
+
+
+
+
+
+
 // #######################################################################################################################################################
 // #######################################################################################################################################################
 // #######################################################################################################################################################
@@ -131,6 +160,7 @@ const IeltsWriting1Command = "Rate this essay depending on IELTS exam test as wr
 const IeltsWriting2Command = "Rate this essay depending on IELTS exam test as writing task 2, give Band number, and give Grammar and spelling mistakes if found, and give suggestions to everything:"
 const GeneralWriteCommand = "Rate this essay by giving number of 10. Give Grammar and spelling mistakes if found, and give suggestions to everything:"
 const StoryWritingCommand = ["Check the grammar and vocabulary mistakes of this statement of a story:","Then send to me a new statement as a completion to the story (at maximum use 20 words)."]
+const ImageWritingCommand = "This essay is a description for an image, Check the grammar and vocabulary mistakes of this essay:c"
 
 
 class writingClass{
@@ -142,7 +172,8 @@ class writingClass{
     static #components = {
         "userWriteing": document.querySelector('#userWriteing'), // **
         "aiWriting": document.querySelector('#aiWriting'), // **
-        "wordsnum": document.querySelector('#wordsnum')
+        "wordsnum": document.querySelector('#wordsnum'),
+        "imageToCraft": document.querySelector('#imageToCraft')
     }
     static #controles = {
         "goTopic": document.querySelector('#goTopic'),
@@ -154,6 +185,12 @@ class writingClass{
         "getWriting": document.querySelector('#getWriting') 
     }
 
+    static #getImg = function(imgData){
+        return imgData.urls.regular;
+    }
+    static #pushImg = function(imgData){
+        writingClass.#components.imageToCraft.src = imgData;
+    }
     static #getTopic = function(topic){
         let title = document.createElement("p");
         title.classList.add('is-size-6');
@@ -194,7 +231,6 @@ class writingClass{
         return writing
     }
     static #aiWritePush = function(response){ // ##
-        console.log(response)
         let paragraph = document.createElement("p");
         paragraph.textContent = response;
         paragraph.textContent = response.choices[0].message.content;
@@ -211,7 +247,12 @@ class writingClass{
             newTopicAdd: ()=>{
                 getRandomTopic(this.composers.afterGettingRandomTopic, this.json)
             },
-            
+
+            getImgPush: composer(parent.#getImg, parent.#pushImg),
+            generateImg: ()=>{
+                getUnsplashImg(this.composers.getImgPush)
+            },
+
             pushShow: composer(parent.#aiWritePush), 
             sumbitWriting: composer(
                 parent.#getUsrWrite,
@@ -226,8 +267,11 @@ class writingClass{
             this.addListeners()
         }
         this.addListeners = function(){
-            parent.#controles.goTopic.addEventListener('click', this.composers.haveTopic);
-            parent.#controles.gnrateTopic.addEventListener('click', this.composers.newTopicAdd);
+            parent.#controles.goTopic?.addEventListener('click', this.composers.haveTopic);
+            parent.#controles.gnrateTopic?.addEventListener('click', this.composers.newTopicAdd);
+
+            parent.#components.imageToCraft ? this.composers.generateImg() : "";
+
             parent.#inputs.getWriting.addEventListener('keyup', countWords);
             parent.#controles.submitWrite.addEventListener('click', ()=>{
                 if(checkMinLimit(parent.#inputs.getWriting)){
@@ -350,6 +394,7 @@ let writeStory = new storyWritingClass(StoryWritingCommand, "ieltsSpeaking1");
 let IeltsWriting1 = new writingClass(IeltsWriting1Command, "ieltsSpeaking1");
 let IeltsWriting2 = new writingClass(IeltsWriting2Command, "ieltsSpeaking1");
 let generalWriting = new writingClass(GeneralWriteCommand, "ieltsSpeaking1");
+let craftImage = new writingClass(ImageWritingCommand, "ieltsSpeaking1");
 
 
 

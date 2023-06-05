@@ -164,7 +164,7 @@ function hideReportDataPopup(){
     popData.classList.remove('active');
     setTimeout(() => {
         popData.style.display = "none";
-    }, 1800);   
+    }, 700);   
 }
 // Function to show details of every reportSection
 
@@ -185,7 +185,6 @@ dashpage.forEach((ele)=>{
         })
         ele.classList.add('active')
         let val = ele.getAttribute('dashpage');
-        console.log(val)
         document.querySelector(`[dashSect=${val}]`).classList.add("active");
     })
 })
@@ -202,23 +201,14 @@ toolControl?.addEventListener('click', ()=>{
 
 
 
-let exportDataTable = document.getElementById("exportDataTable");
-exportDataTable?.addEventListener('click', ()=>{
-    let doc = new jsPDF();
-    const fileName = document.querySelector(".backnav").querySelector("p").textContent;
-    doc.autoTable({ html: 'table' });
-    doc.save(`${fileName}.pdf`);
-})
-
-
-
-
-
-
-
-
-
-
-// showReportDataPopup() 
-
+let exportDataTable = [...document.querySelectorAll("[exporter=exportDataTable]")];
+exportDataTable.forEach((ele)=>{
+    ele?.addEventListener('click', ()=>{
+        let doc = new jsPDF();
+        const fileName = ele.getAttribute("fileName");
+        const table = ele.parentElement.querySelector('table')
+        doc.autoTable({ html: table });
+        doc.save(`${fileName}.pdf`);
+    })
+}) 
 
