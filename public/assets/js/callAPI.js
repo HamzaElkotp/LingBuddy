@@ -122,7 +122,6 @@ const getUnsplashImg = async function(fun){
         }
     })
 }
-// data
 
 
 
@@ -160,7 +159,10 @@ const IeltsWriting1Command = "Rate this essay depending on IELTS exam test as wr
 const IeltsWriting2Command = "Rate this essay depending on IELTS exam test as writing task 2, give Band number, and give Grammar and spelling mistakes if found, and give suggestions to everything:"
 const GeneralWriteCommand = "Rate this essay by giving number of 10. Give Grammar and spelling mistakes if found, and give suggestions to everything:"
 const StoryWritingCommand = ["Check the grammar and vocabulary mistakes of this statement of a story:","Then send to me a new statement as a completion to the story (at maximum use 20 words)."]
-const ImageWritingCommand = "This essay is a description for an image, Check the grammar and vocabulary mistakes of this essay:c"
+const ImageWritingCommand = "This essay is a description for an image, Check the grammar and vocabulary mistakes of this essay:"
+const EasyIELTSIntroCommand = "Rate this intro for IELTS essay task 1, give Grammar and spelling mistakes if found, and give suggestions:"
+const EasyIELTSBodyCommand = "Rate this body for IELTS essay, give Grammar and spelling mistakes if found, and give suggestions:"
+const EasyIELTSconcCommand = "Rate this conclusion for IELTS essay, give Grammar and spelling mistakes if found, and give suggestions:"
 
 
 class writingClass{
@@ -395,6 +397,9 @@ let IeltsWriting1 = new writingClass(IeltsWriting1Command, "ieltsSpeaking1");
 let IeltsWriting2 = new writingClass(IeltsWriting2Command, "ieltsSpeaking1");
 let generalWriting = new writingClass(GeneralWriteCommand, "ieltsSpeaking1");
 let craftImage = new writingClass(ImageWritingCommand, "ieltsSpeaking1");
+let easyIELTSIntro = new writingClass(EasyIELTSIntroCommand, "ieltsSpeaking1");
+let easyIELTSBody = new writingClass(EasyIELTSBodyCommand, "ieltsSpeaking1");
+let easyIELTSConc = new writingClass(EasyIELTSconcCommand, "ieltsSpeaking1");
 
 
 
