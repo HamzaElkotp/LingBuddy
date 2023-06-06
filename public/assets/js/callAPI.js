@@ -392,16 +392,15 @@ class storyWritingClass{
 }
 
 
-let writeStory = new storyWritingClass(StoryWritingCommand, "ieltsSpeaking1");
 let IeltsWriting1 = new writingClass(IeltsWriting1Command, "ieltsSpeaking1");
 let IeltsWriting2 = new writingClass(IeltsWriting2Command, "ieltsSpeaking1");
 let generalWriting = new writingClass(GeneralWriteCommand, "ieltsSpeaking1");
-let craftImage = new writingClass(ImageWritingCommand, "ieltsSpeaking1");
 let easyIELTSIntro = new writingClass(EasyIELTSIntroCommand, "ieltsSpeaking1");
 let easyIELTSBody = new writingClass(EasyIELTSBodyCommand, "ieltsSpeaking1");
 let easyIELTSConc = new writingClass(EasyIELTSconcCommand, "ieltsSpeaking1");
 
-
+let craftImage = new writingClass(ImageWritingCommand, "ieltsSpeaking1");
+let writeStory = new storyWritingClass(StoryWritingCommand, "ieltsSpeaking1");
 
 
 // Check JUST the grammar and vocabulary mistakes of this statement of a story. Then send to me a new statement as a completion to the story (at maximum use 20 words). This is the story I have mention: `She was walking in the road, till suddenly she hit a car`

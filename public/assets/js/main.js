@@ -212,3 +212,61 @@ exportDataTable.forEach((ele)=>{
     })
 }) 
 
+let exportReportData = document.querySelector("#exportSheet");
+exportReportData?.addEventListener('click', ()=>{
+    const element = document.getElementById("popHtml");
+    const html = element.outerHTML;
+
+    const stylesheets = Array.from(document.styleSheets);
+    let css = '';
+
+    stylesheets.forEach((stylesheet) => {
+        const rules = Array.from(stylesheet.cssRules);
+        rules.forEach((rule) => {
+            css += rule.cssText;
+        });
+    });
+
+    const combinedHTML = `
+        <html>
+        <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            ${css}
+            .popup-container{
+                bottom: 0;
+                width: 100%;
+                min-width: 100%;
+                height: 100vh;
+            }
+            button{
+                display: none !important;
+            }
+            i{
+                display: none !important;
+            }
+            .writings:last-of-type {
+                margin-bottom: 60px;
+            }
+        </style>
+        </head>
+        <body>
+        ${html}
+        </body>
+        </html>
+    `;
+
+    let fileName = `${document.querySelector("[fileName]").getAttribute("fileName")}${document.querySelector("[fildeid]").textContent}`
+
+    const link = document.createElement('a');
+    link.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(combinedHTML));
+    link.setAttribute('download', fileName);
+    link.style.display = 'none';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+})
+
+
+

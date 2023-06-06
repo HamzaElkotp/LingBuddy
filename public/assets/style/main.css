@@ -557,7 +557,7 @@ nav.mobileHeader .navbar-item.active i {
     white-space: pre-wrap;
 }
 .chat .msg.usr {
-    background-color: var(--gLightbg);
+    background-color: var(--purple60);
     position: relative;
     margin-right: 10px;
     direction: ltr;
@@ -567,7 +567,7 @@ nav.mobileHeader .navbar-item.active i {
     content: "";
     top: 0;
     left: calc(100% - 8px);
-    background-color: var(--gLightbg);
+    background-color: var(--purple60);
     height: 12px;
     width: 15px;
     border-radius: 0px 2px 100% 0px;
@@ -616,11 +616,14 @@ nav.mobileHeader .navbar-item.active i {
 }
 .controler .sendBTN {
     padding-left: 10px;
-    color: var(--gLightbg);
+    color: var(--purple60);
     background-color: transparent;
     border: none;
     cursor: pointer;
     /* font-size: 20px; */
+}
+.controler .sendBTN i{
+    font-size: 20px;
 }
 
 
@@ -1116,7 +1119,7 @@ nav.mobileHeader .navbar-item.active i {
     border-bottom: 1px solid var(--purple50);
 }
 .navigation span{
-    padding: 5px 8px 0px;
+    padding: 2px 8px 0px;
     border-radius: 6px 6px 0px 0px;
     font-size: 14.5px;
     cursor: pointer;
@@ -1126,7 +1129,7 @@ nav.mobileHeader .navbar-item.active i {
     /* background-color: var(--gLightbg); */
     background-image: var(--gradientPurpleLD);
     color: var(--whiteBg);
-    padding: 5px 15px 0px;
+    padding: 2px 15px 0px;
 }
 .column.contenter.contentBox.nopadd{
     padding-top: 0 !important;
@@ -1746,8 +1749,15 @@ hr {
 
 
 
-
-
+.tableBox {
+    overflow-x: auto;
+    padding-bottom: 5px;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+table{
+    min-width: 500px;
+}
 
 
 
