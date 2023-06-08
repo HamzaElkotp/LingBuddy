@@ -140,6 +140,12 @@ ul,li{
 i{
     padding: 0px;
 }
+.icon.is-small.is-left i {
+    font-size: 18px;
+}
+.input[type="date"] {
+    padding-top: 4px;
+}
 .columns {
     margin-top: 0;
     margin-bottom: 0 ;
@@ -1073,12 +1079,27 @@ nav.mobileHeader .navbar-item.active i {
     margin-top: 0px !important;
 }
 .popup-overlay.active .popup-container {
-    transition: 0.5s 0.2s bottom;
+    transition: 0.2s 0.2s bottom;
+    bottom: 0;
+    border-radius: 5px;
+}
+.popup-overlay.dataPop.opacityAni{
+    opacity: 0;
+    transition: 0.3s opacity;
+}
+.popup-overlay.dataPop.opacityAni.active{
+    opacity: 1;
+}
+.popup-overlay.dataPop.opacityAni .popup-container {
     bottom: 0;
     border-radius: 5px;
 }
 
-.writings{
+
+.roadmapDetails{
+    margin-bottom: 10px;
+}
+.writings, .roadmapDetails{
     white-space: pre-wrap;
 }
 .spelling {
@@ -1108,6 +1129,7 @@ nav.mobileHeader .navbar-item.active i {
     margin-top: -8px;
     font-size: 20px;
 }
+
 
 
 
@@ -1897,6 +1919,65 @@ table{
     flex-basis: 25%;
     width: 100%;
 }
+
+
+
+@keyframes load{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes loadtext{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.6;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.load{
+    margin: 15px 0;
+    transform: rotate(0deg);
+    animation: load 5s linear 0s infinite;
+}
+.loadtext{
+    opacity: 1;
+    animation: loadtext 3s linear 0s infinite;
+}
+
+[interfaceId]{
+    opacity: 0;
+    transition: 0.5s opacity;
+    margin-top: 10px;
+    pointer-events: none;
+}
+[interfaceId].active{
+    opacity: 1;
+    display: block !important;
+    pointer-events: all;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* @media screen and (max-width: 1300px) {
     .reportBoxes .columns{
         flex-wrap: wrap;

@@ -18,7 +18,13 @@
 
         <div class="column contenter contentBox">
             <div class="lessonsPage">
-                <p class="label is-medium has-text-weight-medium has-text-grey">Current Roadmap</p>
+                <div class="is-flex is-justify-content-space-between is-align-items-center">
+                    <p class="label is-medium has-text-weight-medium has-text-grey">Current Roadmap</p>
+                    <div class="buttons is-margine-left">
+                        <button class="button is-purpleGrade is-marginless-mins" workrole="showPopup" targeted="roadmapGeneratePop"><i class="fa-regular fa-square-plus" style="padding-right: 6px;"></i> New Roadmap</button>
+                    </div>
+                </div>
+
                 <div class="reportBoxes">
                     <div class="reportSection show">
                         <div class="columns is-multiline">
@@ -130,6 +136,43 @@ Remember to allocate time each day for focused practice and review. Stay consist
                 
             </div>
         </div>
+
+        <div class="popup-overlay is-noShadow dataPop opacityAni is-pg-center" id="roadmapGeneratePop">
+            <div class="popup-container">
+                <div class="buttons">
+                    <i class="fas fa-times" workrole="hidePopup" role="button"></i>
+                </div>
+                <div class="contentBoxer">
+                    <p class="is-size-4 has-text-weight-semibold has-text-centered has-text-purple">Roadmap Generator</p>
+                    <div class="block active" interfaceId="1">
+                        <p class="is-size-5 has-text-weight-medium">Choose when you'll take your exam:</p>
+                        <div class="control has-icons-left">
+                            <input type="date" class="input" id="rmDateSelect">
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-calendar-day"></i>
+                            </span>
+                        </div>
+                        <br>
+                        <div class="has-text-centered">
+                            <button class="button is-purpleGradedeg" hideInterfBtn="1" targetInterf="2" id="generateRMbtn"><i class="fa-solid fa-terminal" style="font-size:12px; padding-right:5px"></i> Generate Roadmap</button>
+                        </div>
+                    </div>
+                    <div class="block has-text-centered" interfaceId="2">
+                        <i class="fa-solid fa-spinner has-text-purple is-size-1 load"></i>
+                        <p class="is-size-5-5 loadtext">Generating Roadmap</p>
+                    </div>
+                    <div class="block" interfaceId="3">
+                        <div class="roadmapDetails" id="roadmapDetails">
+
+                        </div>
+                        <div class="has-text-centered">
+                            <button class="button is-purpleGradedeg" id="activateRMbtn"><i class="fa-solid fa-play" style="font-size:12px; padding-right:5px"></i> Activate</button>
+                            <button class="button is-purpleGradedeg" hideInterfBtn="3" targetInterf="2" id="regenerateRMbtn"><i class="fa-solid fa-terminal" style="font-size:12px; padding-right:5px"></i> Regenerate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
           
     </div>
 
@@ -138,3 +181,4 @@ Remember to allocate time each day for focused practice and review. Stay consist
 </body>
 </html>
 <script src='/assets/js/main.js'></script>
+<script src='/assets/js/callAPI.js'></script>

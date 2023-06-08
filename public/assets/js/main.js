@@ -146,26 +146,7 @@ function showall(getted){
     box.classList.add('show');
 }
 
-let reportData = [...document.querySelectorAll(".reportData")]
-reportData.forEach((ele)=>{
-    ele.addEventListener('click', ()=>{
-        showReportDataPopup()
-    })
-})
-function showReportDataPopup(){
-    let popData = document.querySelector(".dataPop");
-    popData.style.display = "flex";
-    setTimeout(() => {
-        popData.classList.add('active');
-    }, 10);   
-}
-function hideReportDataPopup(){
-    let popData = document.querySelector(".dataPop");
-    popData.classList.remove('active');
-    setTimeout(() => {
-        popData.style.display = "none";
-    }, 700);   
-}
+
 // Function to show details of every reportSection
 
 
@@ -190,14 +171,66 @@ dashpage.forEach((ele)=>{
 })
 
 
-const toolControl = document.querySelector("#toolControl");
-const toolsControlPopup = document.querySelector("#toolsControlPopup");
-toolControl?.addEventListener('click', ()=>{
-    toolsControlPopup.style.display = "flex";
+
+
+
+
+
+
+
+
+const hidePopUp = function(e){
+    let parent = e.target.closest(".dataPop")
+    parent.classList.remove('active');
     setTimeout(() => {
-        toolsControlPopup.classList.add('active');
-    }, 10);  
+        parent.style.display = "none"
+    }, 310);
+}
+const showPopUp = function(e){
+    let parent = document.getElementById(e.target.getAttribute("targeted"))
+    parent.style.display = "flex";
+    setTimeout(() => {
+        parent.classList.add("opacityAni", "active")
+    }, 0);
+}
+const hidePopUpBtns = document.querySelectorAll("[workrole=hidePopup]");
+hidePopUpBtns?.forEach((ele)=>{
+    ele.addEventListener('click', (e)=>{
+        hidePopUp(e)
+    })
+}) 
+const showPopUpBtns = document.querySelectorAll("[workrole=showPopup]");
+showPopUpBtns?.forEach((ele)=>{
+    ele.addEventListener("click", (e)=>{
+        showPopUp(e)
+    })
 })
+
+
+
+
+
+let reportData = [...document.querySelectorAll(".reportData")]
+reportData.forEach((ele)=>{
+    ele.addEventListener('click', ()=>{
+        showReportDataPopup()
+    })
+})
+function showReportDataPopup(){
+    let popData = document.querySelector(".dataPop");
+    popData.style.display = "flex";
+    setTimeout(() => {
+        popData.classList.add('active');
+    }, 10);   
+}
+function hideReportDataPopup(){
+    let popData = document.querySelector(".dataPop");
+    popData.classList.remove('active');
+    setTimeout(() => {
+        popData.style.display = "none";
+    }, 700);   
+}
+
 
 
 
@@ -267,6 +300,10 @@ exportReportData?.addEventListener('click', ()=>{
     link.click();
     document.body.removeChild(link);
 })
+
+
+
+
 
 
 

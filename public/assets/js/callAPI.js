@@ -1,4 +1,8 @@
 /////////////////////////////////////////// Main Functions
+const date = new Date();
+const currentDateFormated = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2,0)}-${String(date.getDate() - 1).padStart(2,0)}`
+
+
 
 // Function to call ChatGPT API
 const getChatGPT = async function(fun, fullMsg){
@@ -576,6 +580,67 @@ const APPIELTSSpeak1 = {
         // APPIELTSSpeak1.controles.submit.addEventListener('click', APPIELTSSpeak1.getNextQuestion)
     }
 }
+
+
+
+
+
+
+const generateRMbtn = document.querySelector("#generateRMbtn");
+const activateRMbtn = document.querySelector("#activateRMbtn");
+const regenerateRMbtn = document.querySelector("#regenerateRMbtn");
+const interfacesId = document.querySelectorAll("[interfaceId]");
+const rmDateSelect = document.querySelector("#rmDateSelect");
+const roadmapDetails = document.querySelector("#roadmapDetails")
+
+
+const checkDate = function(fns){
+    if(rmDateSelect.value > currentDateFormated){
+        fns()
+    }
+}
+const hideInterface = function(e){
+    let parent = e.target.closest(`[interfaceId="${e.target.getAttribute("hideInterfBtn")}"]`);
+    parent.classList.remove("active");
+    setTimeout(() => {
+        parent.style.display = "none"
+    }, 0);
+    return e
+}
+const activeInterface = function(e){
+    let parent = document.querySelector(`[interfaceId="${e.target.getAttribute("targetInterf")}"]`);
+    parent.classList.add("active");
+    return e
+}
+const generateRmCommand = function(){
+    let days = Math.floor((new Date(rmDateSelect.value) - date) / (24 * 60 * 60 * 1000))
+    return `I've ${days} days before my IETLS exam, generate studying roadmap then suggest YouTube channels to prepare from.`
+}
+const pushRoadmap = function(rm){
+    roadmapDetails.textContent = rm.choices[0].message.content
+}
+const hide2ndInterface = function(e){
+    let parent = document.querySelector(`[interfaceId="2"]`);
+    parent.classList.remove("active");
+    setTimeout(() => {
+        parent.style.display = "none"
+    }, 0);
+}
+const show3rdInterface = function(e){
+    let parent = document.querySelector(`[interfaceId="3"]`);
+    parent.classList.add("active");
+}
+const callRMgenerator = composer(hideInterface, activeInterface);
+const proccessRm = composer(pushRoadmap, hide2ndInterface, show3rdInterface)
+const callRmGeneration = composer(generateRmCommand, (command)=>{getChatGPT(proccessRm, command)});
+const roadmapGeneration = composer(callRMgenerator, callRmGeneration);
+
+generateRMbtn?.addEventListener('click', (e)=>{
+    checkDate(()=>{roadmapGeneration(e)})
+});
+regenerateRMbtn?.addEventListener('click', (e)=>{
+    roadmapGeneration(e)
+});
 
 
 

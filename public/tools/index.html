@@ -21,7 +21,7 @@
                 <div class="is-flex is-justify-content-space-between is-align-items-center">
                     <p class="label is-medium has-text-weight-medium has-text-grey">Tools</p>
                     <div class="buttons is-margine-left">
-                        <button class="button is-purpleGrade is-marginless-mins" id="toolControl"><i class="fa-solid fa-wrench" style="padding-right: 6px;"></i> Control Tools</button>
+                        <button class="button is-purpleGrade is-marginless-mins" workrole="showPopup" targeted="toolsControlPopup"><i class="fa-solid fa-wrench" style="padding-right: 6px;"></i> Control Tools</button>
                     </div>
                 </div>
                 <p class="label is-medium has-text-weight-normal has-text-grey is-size-5 is-marginless">Enabled Tools</p>
@@ -62,10 +62,10 @@
         </div>
 
         
-        <div class="popup-overlay is-noShadow dataPop is-width-fixed is-pg-center"  id="toolsControlPopup">
+        <div class="popup-overlay is-noShadow opacityAni dataPop is-width-fixed is-pg-center" id="toolsControlPopup">
             <div class="popup-container">
                 <div class="buttons">
-                    <i class="fas fa-times" onclick="hideReportDataPopup()"></i>
+                    <i class="fas fa-times" workrole="hidePopup" role="button"></i>
                 </div>
                 <div class="toolsSett">
                     <div class="toolSettBox is-flex is-justify-content-space-between">
