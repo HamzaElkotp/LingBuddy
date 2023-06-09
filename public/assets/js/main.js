@@ -136,6 +136,9 @@ const specifyReportSection = function(getted){
     let parent = document.querySelector(`[showerData=${getted}]`).closest(".lessonsPage");
     let searchInput = parent.querySelector("[searchPlace]");
     searchInput.setAttribute("searchPlace", getted);
+
+    let loadcardsBtn = parent.querySelector("[loadPlace]");
+    loadcardsBtn.setAttribute("loadPlace", getted);
     return getted
 }
 const showSectonReports = function(getted){
@@ -164,7 +167,6 @@ typeSelectors.forEach((prnt)=>{
         })
     })
 })
-
 const searchbtn = document.querySelectorAll("[searchbtn]");
 searchbtn.forEach((searchbtn)=>{
     searchbtn.addEventListener('click', (e)=>{
@@ -177,16 +179,13 @@ searchbtn.forEach((searchbtn)=>{
     })
 })
 
-
-
 // function chooseParent
 const searchInReports = function(searchTerm, parentSelector) {
     searchTerm = searchTerm.toLowerCase();
     
     $(parentSelector).find('.reportData').each(function() {
-        console.log($(this))
-        var $div = $(this);
-        var divText = $div.text().toLowerCase();
+        let $div = $(this);
+        let divText = $div.text().toLowerCase();
         
         if (searchTerm === '' || divText.indexOf(searchTerm) !== -1) {
             $div.show(); // Show the div
@@ -195,6 +194,23 @@ const searchInReports = function(searchTerm, parentSelector) {
         }
     });
 }  
+
+
+const loadPlaceBtn = document.querySelectorAll("[loadPlace]");
+loadPlaceBtn.forEach((searchbtn)=>{
+    searchbtn.addEventListener('click', (e)=>{
+        let loadingPlaceName = e.target.getAttribute("loadPlace");
+        let loadingPlace = document.querySelector(`[toShowData="${loadingPlaceName}"]`) || e.target.closest(".lessonsPage")
+
+        loadReportsRoadmaps(loadingPlace)
+    })
+})
+const loadReportsRoadmaps = function(parentSelector){
+    $(parentSelector).find('.reportData').each(function() {
+        let $div = $(this);        
+        $div.show(); // Show the div
+    });
+}
 
 
 
