@@ -120,23 +120,25 @@ if(pageTitle){
 }
 
 
-let typeSelectors = [...document.querySelectorAll(".type-selector")];
-if(typeSelectors){
-    typeSelectors.forEach((prnt)=>{
-        let childrens = prnt.querySelectorAll(".tag")
-        childrens.forEach((chld)=>{
-            chld.addEventListener('click', ()=>{
-                childrens.forEach((ele)=>{
-                    ele.classList.add("is-light");
-                    chld.classList.remove("is-light");
-                    showall(chld.getAttribute("showerData"))
-                })
-            })
-        })
-    })
+const composer = function(...funcs) {
+    return function(value) {
+        return funcs.reduce((acc, func) => func(acc), value);
+    }
 }
 
-function showall(getted){
+
+
+
+
+
+
+const specifyReportSection = function(getted){
+    let parent = document.querySelector(`[showerData=${getted}]`).closest(".lessonsPage");
+    let searchInput = parent.querySelector("[searchPlace]");
+    searchInput.setAttribute("searchPlace", getted);
+    return getted
+}
+const showSectonReports = function(getted){
     let box = document.querySelector(`[toShowData=${getted}]`);
     let parent = box.parentElement;
     let boxes = parent.querySelectorAll(`[toShowData]`);
@@ -144,7 +146,58 @@ function showall(getted){
         ele.classList.remove("show")
     });
     box.classList.add('show');
+    return getted
 }
+const chaingeReportSection = composer(showSectonReports, specifyReportSection);
+
+const typeSelectors = document.querySelectorAll(".type-selector");
+typeSelectors.forEach((prnt)=>{
+    let childrens = prnt.querySelectorAll(".tag")
+    childrens.forEach((chld)=>{
+        chld.addEventListener('click', ()=>{
+            childrens.forEach((ele)=>{
+                ele.classList.add("is-light");
+                chld.classList.remove("is-light");
+
+                chaingeReportSection(chld.getAttribute("showerData"));
+            })
+        })
+    })
+})
+
+const searchbtn = document.querySelectorAll("[searchbtn]");
+searchbtn.forEach((searchbtn)=>{
+    searchbtn.addEventListener('click', (e)=>{
+        let searchbar = e.target.previousElementSibling;
+        let searchingValue = searchbar.value;
+        let searchingPlaceName = searchbar.getAttribute("searchPlace");
+        let searchingPlace = document.querySelector(`[toShowData="${searchingPlaceName}"]`)
+
+        searchInReports(searchingValue, searchingPlace)
+    })
+})
+
+
+
+// function chooseParent
+const searchInReports = function(searchTerm, parentSelector) {
+    searchTerm = searchTerm.toLowerCase();
+    
+    $(parentSelector).find('.reportData').each(function() {
+        console.log($(this))
+        var $div = $(this);
+        var divText = $div.text().toLowerCase();
+        
+        if (searchTerm === '' || divText.indexOf(searchTerm) !== -1) {
+            $div.show(); // Show the div
+        } else {
+            $div.hide(); // Hide the div
+        }
+    });
+}  
+
+
+
 
 
 // Function to show details of every reportSection
@@ -230,6 +283,8 @@ function hideReportDataPopup(){
         popData.style.display = "none";
     }, 700);   
 }
+
+
 
 
 

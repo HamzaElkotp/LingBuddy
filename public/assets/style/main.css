@@ -186,6 +186,36 @@ i{
 .list li{
     list-style:decimal !important;
 }
+.is-size-5-5 {
+    font-size: 1.05rem !important;
+}
+.is-size-6-5{
+    font-size: 0.9rem
+}
+.margintop-10{
+    margin-top: 10px;
+}
+.margintop-15{
+    margin-top: 15px;
+}
+.is-max-content{
+    width: max-content;
+}
+.is-w100{
+    width: 100%;
+}
+.control.is-flex :nth-child(1) {
+    border-radius: 5px 0 0 5px !important;
+}
+.control.is-flex :nth-child(2) {
+    border-radius: 0 5px 5px 0 !important;
+}
+.input::placeholder {
+    font-size: 14.5px;
+}
+
+
+
 
 
 .linksMenu.active{
@@ -1105,12 +1135,6 @@ nav.mobileHeader .navbar-item.active i {
 .spelling {
     text-decoration: underline red 2px;
     color: #000;
-}
-.is-size-5-5 {
-    font-size: 1.05rem !important;
-}
-.is-size-6-5{
-    font-size: 0.9rem
 }
 .important {
     /* color: #00937d; */
