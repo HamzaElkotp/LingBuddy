@@ -10,7 +10,7 @@ const getChatGPT = async function(fun, fullMsg){
         const response = await fetch("https://api.openai.com/v1/chat/completions",{
             method: "POST",
             headers: {
-                'Authorization': `Bearer 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`,
+                'Authorization': `Bearer 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`,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
