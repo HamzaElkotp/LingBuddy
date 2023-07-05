@@ -2,15 +2,13 @@
 const date = new Date();
 const currentDateFormated = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2,0)}-${String(date.getDate() - 1).padStart(2,0)}`
 
-
-
 // Function to call ChatGPT API
 const getChatGPT = async function(fun, fullMsg){
     async function fetchAPI(){
         const response = await fetch("https://api.openai.com/v1/chat/completions",{
             method: "POST",
             headers: {
-                'Authorization': `Bearer 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`,
+                'Authorization': `Bearer Put API key`,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
