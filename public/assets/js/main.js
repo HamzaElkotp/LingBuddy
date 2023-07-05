@@ -120,7 +120,7 @@ if(pageTitle){
 }
 
 
-const composer = function(...funcs) {
+const composerPrivate = function(...funcs) {
     return function(value) {
         return funcs.reduce((acc, func) => func(acc), value);
     }
@@ -151,7 +151,7 @@ const showSectonReports = function(getted){
     box.classList.add('show');
     return getted
 }
-const chaingeReportSection = composer(showSectonReports, specifyReportSection);
+const chaingeReportSection = composerPrivate(showSectonReports, specifyReportSection);
 
 const typeSelectors = document.querySelectorAll(".type-selector");
 typeSelectors.forEach((prnt)=>{
